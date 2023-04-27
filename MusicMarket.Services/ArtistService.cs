@@ -35,7 +35,7 @@ namespace MusicMarket.Services
             return await _unitOfWork.Artists.GetAllAsync();
         }
 
-        public async Task<Artist> GetArtistByIdWithMusic(int id)
+        public async Task<Artist> GetArtistByIdWithMusics(int id)
         {
             return await _unitOfWork.Artists.GetWithMusicByIdAsync(id);
         }

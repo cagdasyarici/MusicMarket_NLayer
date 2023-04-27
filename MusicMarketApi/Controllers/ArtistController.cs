@@ -29,6 +29,15 @@ namespace MusicMarketApi.Controllers
             return Ok(artistResources);
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ArtistDTO>>> GetAllArtist()
+        {
+            var artists = await _artistService.GetAllArtists();
+            var artistResources = _mapper.Map<IEnumerable<Artist>, IEnumerable<ArtistDTO>>(artists);
+            return Ok(artistResources);
+        }
+
+
         [HttpGet("{id}")]
         public async Task<ActionResult<ArtistDTO>> GetArtistById(int id)
         {
